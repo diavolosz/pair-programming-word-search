@@ -41,28 +41,6 @@ const wordSearch = (letters, word) => {
             return true
         }
     }
-
-
-    let scanDiagonal = function(array, bottomLeft) {
-      let YOflength = array.length;
-      let XOflength = array[0].length;
-      let maxLength = Math.max(XOflength, YOflength);
-      let temp;
-      let returnArray = [];
-      for (let k = 0; k <= 2 * (maxLength - 1); ++k) {
-          temp = [];
-          for (let y = YOflength - 1; y >= 0; --y) {
-              let x = k - (bottomLeft ? YOflength - y : y);
-              if (x >= 0 && x < XOflength) {
-                  temp.push(array[y][x]);
-              }
-          }
-          if(temp.length > 0) {
-              returnArray.push(temp.join(''));
-          }
-      }
-      return returnArray;
-    }
   return false
 }
 
